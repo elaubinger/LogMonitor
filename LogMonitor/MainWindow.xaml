@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogMonitor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Log Monitor" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="87*"/>
+            <ColumnDefinition Width="291*"/>
+            <ColumnDefinition Width="416*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="SelectFileButton" Content="Select File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="251,10,0,0" Click="SelectFileButton_Click" Grid.Column="2"/>
+        <TextBox x:Name="FileName" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="614" Margin="10,10,0,0" Grid.ColumnSpan="3"/>
+        <Button x:Name="ToggleMonitor" Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="331,10,0,0" Click="ToggleMonitor_Click" Grid.Column="2"/>
+        <ScrollViewer x:Name="OutputScrollViewer" Margin="10,35,5,6" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.ColumnSpan="3" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <TextBox x:Name="Output"   FontFamily="Consolas" IsReadOnly="True"  ScrollViewer.CanContentScroll="True"/>
+        </ScrollViewer>
+
     </Grid>
 </Window>
